@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CodeFlash — AI-powered code review that catches bugs before your teammates do. Scans every pull request in under 10 seconds." />
+  <title>CodeFlash — AI Code Review</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#" class="nav__logo">
+        <svg class="nav__bolt" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M13 2L4.5 13.5H11L10 22L20.5 10.5H14L13 2Z" fill="#f97316" stroke="#f97316" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+        <span>CodeFlash</span>
+      </a>
+
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav__menu" id="nav-menu" role="navigation">
+        <a href="#features" class="nav__link">Features</a>
+        <a href="#how-it-works" class="nav__link">How it works</a>
+        <a href="#pricing" class="nav__link">Pricing</a>
+        <a href="#" class="btn btn--nav">Get started free</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero">
+      <div class="hero__bg-grid" aria-hidden="true"></div>
+      <div class="hero__bg-glow" aria-hidden="true"></div>
+
+      <div class="container hero__content">
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          AI-powered · Ships in seconds
+        </div>
+
+        <h1 class="hero__headline">
+          Your AI reviewer catches bugs<br class="hero__br"/>
+          <span class="hero__headline-accent">before your teammates do.</span>
+        </h1>
+
+        <p class="hero__sub">
+          CodeFlash scans every pull request for logic errors, security gaps,<br class="hero__br"/>
+          and style issues — in under 10 seconds.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#" class="btn btn--primary btn--cta">
+            <span class="btn__text">Try it free — no credit card</span>
+            <span class="btn__shimmer" aria-hidden="true"></span>
+          </a>
+          <a href="#demo" class="hero__secondary-link">
+            See how it works
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </a>
+        </div>
+
+        <div class="hero__social-proof">
+          <div class="hero__avatars" aria-hidden="true">
+            <div class="hero__avatar hero__avatar--1"></div>
+            <div class="hero__avatar hero__avatar--2"></div>
+            <div class="hero__avatar hero__avatar--3"></div>
+            <div class="hero__avatar hero__avatar--4"></div>
+          </div>
+          <p class="hero__proof-text">Join developers shipping with confidence</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DEMO SECTION ===== -->
+    <section class="demo section" id="demo">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">See CodeFlash in action</h2>
+          <p class="section-sub">A real PR diff. A real vulnerability. Caught in seconds.</p>
+        </div>
+
+        <div class="diff-card reveal">
+          <!-- Diff card header -->
+          <div class="diff-card__header">
+            <div class="diff-card__dots" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="diff-card__file-path">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              api/db/queries.py
+            </div>
+            <div class="diff-card__meta">
+              <span class="diff-card__changes">+12 −4</span>
+              <span class="diff-card__pr">PR #247</span>
+            </div>
+          </div>
+
+          <!-- Diff body: code on left, comments on right -->
+          <div class="diff-card__body">
+            <div class="diff-code" role="region" aria-label="Code diff">
+              <div class="diff-line diff-line--context">
+                <span class="diff-line__num">18</span>
+                <span class="diff-line__num">18</span>
+                <span class="diff-line__marker"> </span>
+                <code class="diff-line__code"><span class="code-keyword">def</span> <span class="code-fn">get_user_by_id</span>(user_id):</code>
+              </div>
+              <div class="diff-line diff-line--context">
+                <span class="diff-line__num">19</span>
+                <span class="diff-line__num">19</span>
+                <span class="diff-line__marker"> </span>
+                <code class="diff-line__code">    conn = get_db_connection()</code>
+              </div>
+              <div class="diff-line diff-line--context">
+                <span class="diff-line__num">20</span>
+                <span class="diff-line__num">20</span>
+                <span class="diff-line__marker"> </span>
+                <code class="diff-line__code">    cursor = conn.cursor()</code>
+              </div>
+              <div class="diff-line diff-line--removed">
+                <span class="diff-line__num">21</span>
+                <span class="diff-line__num"></span>
+                <span class="diff-line__marker">−</span>
+                <code class="diff-line__code">    query = <span class="code-string">"SELECT * FROM users WHERE id = ?"</span></code>
+              </div>
+              <div class="diff-line diff-line--removed">
+                <span class="diff-line__num">22</span>
+                <span class="diff-line__num"></span>
+                <span class="diff-line__marker">−</span>
+                <code class="diff-line__code">    cursor.execute(query, (user_id,))</code>
+              </div>
+              <div class="diff-line diff-line--added diff-line--flagged" id="flagged-line-1">
+                <span class="diff-line__num"></span>
+                <span class="diff-line__num">21</span>
+                <span class="diff-line__marker">+</span>
+                <code class="diff-line__code">    query = <span class="code-string">f"SELECT * FROM users WHERE id = {user_id}"</span></code>
+              </div>
+              <div class="diff-line diff-line--added diff-line--flagged">
+                <span class="diff-line__num"></span>
+                <span class="diff-line__num">22</span>
+                <span class="diff-line__marker">+</span>
+                <code class="diff-line__code">    <span class="code-keyword">result</span> = cursor.execute(query)</code>
+              </div>
+              <div class="diff-line diff-line--context">
+                <span class="diff-line__num">23</span>
+                <span class="diff-line__num">23</span>
+                <span class="diff-line__marker"> </span>
+                <code class="diff-line__code">    <span class="code-keyword">return</span> cursor.fetchone()</code>
+              </div>
+              <div class="diff-line diff-line--context">
+                <span class="diff-line__num">24</span>
+                <span class="diff-line__num">24</span>
+                <span class="diff-line__marker"> </span>
+                <code class="diff-line__code">    conn.close()</code>
+              </div>
+            </div>
+
+            <!-- AI Review Comments -->
+            <div class="diff-comments" role="region" aria-label="CodeFlash review comments">
+              <div class="diff-comment diff-comment--high" id="comment-1">
+                <div class="diff-comment__header">
+                  <div class="diff-comment__author">
+                    <div class="diff-comment__avatar" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 2L4.5 13.5H11L10 22L20.5 10.5H14L13 2Z" fill="#f97316"/>
+                      </svg>
+                    </div>
+                    <span class="diff-comment__name">CodeFlash AI</span>
+                    <span class="diff-comment__time">just now</span>
+                  </div>
+                  <span class="diff-comment__badge diff-comment__badge--high">🔴 High — SQL Injection Risk</span>
+                </div>
+                <div class="diff-comment__body">
+                  <p class="diff-comment__text" id="comment-text-1"></p>
+                  <div class="diff-comment__suggestion">
+                    <div class="diff-comment__suggestion-label">Suggested fix</div>
+                    <pre class="diff-comment__code"><code><span class="code-comment"># Use parameterized query instead</span>
+query = <span class="code-string">"SELECT * FROM users WHERE id = ?"</span>
+cursor.execute(query, (user_id,))</code></pre>
+                  </div>
+                </div>
+                <div class="diff-comment__line-ref">Lines 21–22</div>
+              </div>
+
+              <div class="diff-comment diff-comment--medium" id="comment-2">
+                <div class="diff-comment__header">
+                  <div class="diff-comment__author">
+                    <div class="diff-comment__avatar" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 2L4.5 13.5H11L10 22L20.5 10.5H14L13 2Z" fill="#f97316"/>
+                      </svg>
+                    </div>
+                    <span class="diff-comment__name">CodeFlash AI</span>
+                    <span class="diff-comment__time">just now</span>
+                  </div>
+                  <span class="diff-comment__badge diff-comment__badge--medium">🟡 Medium — Unused variable</span>
+                </div>
+                <div class="diff-comment__body">
+                  <p class="diff-comment__text" id="comment-text-2"></p>
+                </div>
+                <div class="diff-comment__line-ref">Line 22</div>
+              </div>
+
+              <div class="diff-comments__summary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                2 issues found · 8.4s
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES SECTION ===== -->
+    <section class="features section" id="features">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Built for speed. Wired for quality.</h2>
+          <p class="section-sub">Everything you need, nothing you don't.</p>
+        </div>
+
+        <div class="features__grid">
+          <div class="feature-card reveal">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="feature-card__title">10-second reviews</h3>
+            <p class="feature-card__desc">No waiting. CodeFlash runs the moment a PR is opened and posts inline comments before your first coffee.</p>
+          </div>
+
+          <div class="feature-card reveal" style="--delay: 0.1s">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="feature-card__title">Catches what humans miss</h3>
+            <p class="feature-card__desc">Logic errors, race conditions, hardcoded secrets, SQL injection — flagged automatically, every time.</p>
+          </div>
+
+          <div class="feature-card reveal" style="--delay: 0.2s">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3 class="feature-card__title">Works with your stack</h3>
+            <p class="feature-card__desc">Python, JavaScript, TypeScript, Go, Java. Connects to GitHub, GitLab, and Bitbucket out of the box.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS SECTION ===== -->
+    <section class="how section" id="how-it-works">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Up and running in minutes</h2>
+          <p class="section-sub">Three steps. No config files. No PhD required.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step__connector" aria-hidden="true"></div>
+            <div class="step__num" aria-hidden="true">1</div>
+            <div class="step__content">
+              <div class="step__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </div>
+              <h3 class="step__title">Connect your repo</h3>
+              <p class="step__desc">Authorize CodeFlash on GitHub, GitLab, or Bitbucket. Takes 30 seconds — no SSH keys, no webhooks to configure manually.</p>
+            </div>
+          </div>
+
+          <div class="step reveal" style="--delay: 0.15s">
+            <div class="step__connector" aria-hidden="true"></div>
+            <div class="step__num" aria-hidden="true">2</div>
+            <div class="step__content">
+              <div class="step__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7M6 9v12"/></svg>
+              </div>
+              <h3 class="step__title">Open a pull request</h3>
+              <p class="step__desc">Push your branch and open a PR as usual. CodeFlash listens for the event automatically — nothing changes in your workflow.</p>
+            </div>
+          </div>
+
+          <div class="step reveal" style="--delay: 0.3s">
+            <div class="step__num" aria-hidden="true">3</div>
+            <div class="step__content">
+              <div class="step__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <h3 class="step__title">Get inline comments in seconds</h3>
+              <p class="step__desc">CodeFlash posts review comments directly on your PR diff — severity badges, explanations, and suggested fixes included.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRICING SECTION ===== -->
+    <section class="pricing section" id="pricing">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Simple pricing. No surprises.</h2>
+          <p class="section-sub">Start free. Scale when you're ready.</p>
+        </div>
+
+        <div class="pricing__grid">
+          <div class="pricing-card reveal">
+            <div class="pricing-card__tier">Solo</div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__amount">$0</span>
+              <span class="pricing-card__period">/month</span>
+            </div>
+            <p class="pricing-card__tagline">Everything you need to get started.</p>
+            <ul class="pricing-card__features" role="list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                5 PR reviews per day
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                1 connected repository
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Community support
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                All issue categories
+              </li>
+            </ul>
+            <a href="#" class="btn btn--secondary btn--full">Start for free</a>
+          </div>
+
+          <div class="pricing-card pricing-card--featured reveal" style="--delay: 0.1s">
+            <div class="pricing-card__popular">Most popular</div>
+            <div class="pricing-card__tier">Team</div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__amount">$12</span>
+              <span class="pricing-card__period">/seat/month</span>
+            </div>
+            <p class="pricing-card__tagline">For teams that ship fast and review smarter.</p>
+            <ul class="pricing-card__features" role="list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Unlimited PR reviews
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Unlimited repositories
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Slack alerts
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Priority support
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Team dashboard &amp; analytics
+              </li>
+            </ul>
+            <a href="#" class="btn btn--primary btn--full">Get started — 14-day trial</a>
+          </div>
+        </div>
+
+        <p class="pricing__note reveal">
+          No user count claims. No fake logos. Just the tool.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="nav__logo footer__logo">
+          <svg class="nav__bolt" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M13 2L4.5 13.5H11L10 22L20.5 10.5H14L13 2Z" fill="#f97316" stroke="#f97316" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+          <span>CodeFlash</span>
+        </a>
+        <p class="footer__tagline">Ship faster. Break less. Review smarter.</p>
+        <p class="footer__built">Built for developers, by developers.</p>
+      </div>
+
+      <nav class="footer__links" aria-label="Footer navigation">
+        <a href="#" class="footer__link">Docs</a>
+        <a href="#" class="footer__link">GitHub</a>
+        <a href="#" class="footer__link">Changelog</a>
+        <a href="#" class="footer__link">Privacy</a>
+      </nav>
+    </div>
+
+    <div class="footer__bottom container">
+      <p>© 2025 CodeFlash. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===== EASTER EGG MODAL ===== -->
+  <div class="easter-egg" id="easter-egg" role="dialog" aria-modal="true" aria-labelledby="easter-egg-title" hidden>
+    <div class="easter-egg__overlay" id="easter-egg-overlay"></div>
+    <div class="easter-egg__modal">
+      <div class="easter-egg__rocket" aria-hidden="true">🚀</div>
+      <h2 class="easter-egg__title" id="easter-egg-title">You found it.</h2>
+      <p class="easter-egg__body">You're exactly the kind of developer CodeFlash was built for.</p>
+      <p class="easter-egg__sub">↑↑↓↓←→←→BA — nice memory.</p>
+      <button class="btn btn--primary easter-egg__dismiss" id="easter-egg-dismiss">Let's ship something</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,7 +1,4 @@
-/* =========================================================
-   CodeFlash — styles.css
-   Dark-only theme. Inter + JetBrains Mono.
-   ========================================================= */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
@@ -87,9 +84,7 @@ ul { list-style: none; }
   margin-inline: auto;
 }
 
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
+
 .nav {
   position: fixed;
   inset-block-start: 0;
@@ -149,7 +144,7 @@ ul { list-style: none; }
   background: rgba(255,255,255,0.05);
 }
 
-/* Hamburger */
+
 .nav__hamburger {
   display: none;
   flex-direction: column;
@@ -223,9 +218,7 @@ ul { list-style: none; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* =========================================================
-   BUTTONS
-   ========================================================= */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -259,7 +252,7 @@ ul { list-style: none; }
   transform: translateY(-1px);
 }
 
-/* Primary CTA */
+
 .btn--primary {
   position: relative;
   overflow: hidden;
@@ -278,7 +271,7 @@ ul { list-style: none; }
   box-shadow: 0 8px 32px rgba(249,115,22,0.4);
 }
 
-/* Shimmer */
+
 .btn__shimmer {
   position: absolute;
   inset: 0;
@@ -311,9 +304,7 @@ ul { list-style: none; }
   width: 100%;
 }
 
-/* =========================================================
-   HERO
-   ========================================================= */
+
 .hero {
   position: relative;
   min-height: 100svh;
@@ -323,7 +314,7 @@ ul { list-style: none; }
   overflow: hidden;
 }
 
-/* Animated grid background */
+
 .hero__bg-grid {
   position: absolute;
   inset: 0;
@@ -340,7 +331,7 @@ ul { list-style: none; }
   100% { background-position: 60px 60px; }
 }
 
-/* Radial glow */
+
 .hero__bg-glow {
   position: absolute;
   inset: 0;
@@ -356,7 +347,7 @@ ul { list-style: none; }
   text-align: center;
 }
 
-/* Badge */
+
 .hero__badge {
   display: inline-flex;
   align-items: center;
@@ -387,7 +378,7 @@ ul { list-style: none; }
   50% { opacity: 0.5; transform: scale(0.75); }
 }
 
-/* Headline */
+
 .hero__headline {
   font-size: clamp(2.2rem, 5.5vw, 4rem);
   font-weight: 800;
@@ -410,7 +401,7 @@ ul { list-style: none; }
   .hero__br { display: none; }
 }
 
-/* Sub */
+
 .hero__sub {
   font-size: clamp(1rem, 2vw, 1.2rem);
   color: var(--text-2);
@@ -419,7 +410,7 @@ ul { list-style: none; }
   animation: fadeUp 0.6s 0.2s ease both;
 }
 
-/* Actions */
+
 .hero__actions {
   display: flex;
   align-items: center;
@@ -454,7 +445,7 @@ ul { list-style: none; }
   transform: translateY(3px);
 }
 
-/* Social proof */
+
 .hero__social-proof {
   display: flex;
   align-items: center;
@@ -487,15 +478,13 @@ ul { list-style: none; }
   color: var(--text-3);
 }
 
-/* Fade up animation for hero */
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* =========================================================
-   SCROLL REVEAL
-   ========================================================= */
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -508,9 +497,7 @@ ul { list-style: none; }
   transform: translateY(0);
 }
 
-/* =========================================================
-   DEMO / DIFF CARD
-   ========================================================= */
+
 .demo {
   background: var(--bg-1);
   border-top: 1px solid var(--border);
@@ -527,7 +514,7 @@ ul { list-style: none; }
     0 24px 80px rgba(0,0,0,0.5);
 }
 
-/* Header bar */
+
 .diff-card__header {
   display: flex;
   align-items: center;
@@ -605,7 +592,7 @@ ul { list-style: none; }
   }
 }
 
-/* Code diff */
+
 .diff-code {
   border-right: 1px solid var(--border);
   font-family: 'JetBrains Mono', monospace;
@@ -647,11 +634,11 @@ ul { list-style: none; }
   line-height: 1.8rem;
 }
 
-/* Context lines */
+
 .diff-line--context .diff-line__code { color: var(--text-3); }
 .diff-line--context .diff-line__marker { color: transparent; }
 
-/* Removed lines */
+
 .diff-line--removed {
   background: var(--red);
 }
@@ -659,7 +646,7 @@ ul { list-style: none; }
 .diff-line--removed .diff-line__code { color: #e8b4b8; }
 .diff-line--removed .diff-line__num { color: rgba(248,81,73,0.4); }
 
-/* Added lines */
+
 .diff-line--added {
   background: var(--green);
 }
@@ -667,7 +654,7 @@ ul { list-style: none; }
 .diff-line--added .diff-line__code { color: #b8e6c1; }
 .diff-line--added .diff-line__num { color: rgba(63,185,80,0.4); }
 
-/* Flagged added lines (where the bug is) */
+
 .diff-line--flagged {
   background: rgba(249,115,22,0.08);
   border-left: 2px solid var(--accent);
@@ -675,13 +662,13 @@ ul { list-style: none; }
 .diff-line--flagged .diff-line__marker { color: var(--accent); }
 .diff-line--flagged .diff-line__code { color: #ffd4ab; }
 
-/* Code syntax coloring */
+
 .code-keyword { color: #79c0ff; }
 .code-fn      { color: #d2a8ff; }
 .code-string  { color: #a5d6ff; }
 .code-comment { color: #6e7681; font-style: italic; }
 
-/* ── Comments panel ── */
+
 .diff-comments {
   padding: 1rem;
   display: flex;
@@ -849,9 +836,7 @@ ul { list-style: none; }
   flex-shrink: 0;
 }
 
-/* =========================================================
-   FEATURES
-   ========================================================= */
+
 .features {
   background: var(--bg);
 }
@@ -908,9 +893,7 @@ ul { list-style: none; }
   line-height: 1.65;
 }
 
-/* =========================================================
-   HOW IT WORKS
-   ========================================================= */
+
 .how {
   background: var(--bg-1);
   border-top: 1px solid var(--border);
@@ -940,7 +923,7 @@ ul { list-style: none; }
   padding-top: 1rem;
 }
 
-/* Connector line between steps */
+
 .step__connector {
   position: absolute;
   inset-block-start: 2rem;
@@ -1034,9 +1017,7 @@ ul { list-style: none; }
   }
 }
 
-/* =========================================================
-   PRICING
-   ========================================================= */
+
 .pricing {
   background: var(--bg);
 }
@@ -1067,7 +1048,6 @@ ul { list-style: none; }
   box-shadow: 0 12px 40px rgba(0,0,0,0.3);
 }
 
-/* Featured / highlighted card */
 .pricing-card--featured {
   border-color: var(--accent);
   background: linear-gradient(160deg, rgba(249,115,22,0.07) 0%, var(--bg-2) 60%);
@@ -1159,9 +1139,7 @@ ul { list-style: none; }
   font-style: italic;
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+
 .footer {
   background: var(--bg-1);
   border-top: 1px solid var(--border);
@@ -1227,9 +1205,7 @@ ul { list-style: none; }
   color: var(--text-3);
 }
 
-/* =========================================================
-   EASTER EGG MODAL
-   ========================================================= */
+
 .easter-egg {
   position: fixed;
   inset: 0;
@@ -1310,20 +1286,18 @@ ul { list-style: none; }
   font-size: 1rem;
 }
 
-/* =========================================================
-   MISC UTILITIES
-   ========================================================= */
+
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
-/* scrollbar */
+
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--bg-3); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--border); }
 
-/* selection */
+
 ::selection { background: rgba(249,115,22,0.25); color: var(--text); }

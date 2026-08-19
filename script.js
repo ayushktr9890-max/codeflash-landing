@@ -1,11 +1,8 @@
-/* =============================================================
-   CodeFlash — script.js
-   Pure JS: scroll reveal, typing effect, nav, Konami easter egg
-   ============================================================= */
+
 
 'use strict';
 
-/* ── Scroll reveal via Intersection Observer ── */
+
 (function initReveal() {
   const elements = document.querySelectorAll('.reveal');
   if (!elements.length) return;
@@ -26,7 +23,6 @@
 })();
 
 
-/* ── Typing cursor effect for AI comment text ── */
 (function initTypingEffect() {
   const comments = [
     {
@@ -39,8 +35,8 @@
     },
   ];
 
-  const CHAR_DELAY = 18; // ms per character
-  const COMMENT_GAP = 300; // ms between comments
+  const CHAR_DELAY = 18; 
+  const COMMENT_GAP = 300; 
 
   function typeText(el, text, onDone) {
     el.textContent = '';
@@ -62,7 +58,7 @@
     tick();
   }
 
-  // Only trigger once when the diff card enters the viewport
+ 
   const diffCard = document.querySelector('.diff-card');
   if (!diffCard) return;
 
@@ -95,7 +91,7 @@
 })();
 
 
-/* ── Sticky nav shadow on scroll ── */
+
 (function initNavScroll() {
   const nav = document.getElementById('nav');
   if (!nav) return;
@@ -109,7 +105,7 @@
 })();
 
 
-/* ── Mobile hamburger menu ── */
+
 (function initHamburger() {
   const btn = document.getElementById('hamburger');
   const menu = document.getElementById('nav-menu');
@@ -123,12 +119,12 @@
 
   btn.addEventListener('click', () => toggle());
 
-  // Close on nav link click
+
   menu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => toggle(false));
   });
 
-  // Close when clicking outside
+ 
   document.addEventListener('click', (e) => {
     if (!btn.contains(e.target) && !menu.contains(e.target)) {
       toggle(false);
@@ -137,7 +133,7 @@
 })();
 
 
-/* ── Smooth scroll for nav links ── */
+
 (function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
@@ -154,7 +150,7 @@
 })();
 
 
-/* ── Konami Code Easter Egg ── */
+
 (function initKonami() {
   const SEQUENCE = [
     'ArrowUp', 'ArrowUp',
@@ -172,7 +168,7 @@
 
   let pointer = 0;
   let lastTime = 0;
-  const TIMEOUT = 2000; // reset if >2s between keys
+  const TIMEOUT = 2000;
 
   const show = () => {
     modal.hidden = false;
@@ -188,11 +184,11 @@
   document.addEventListener('keydown', (e) => {
     const now = Date.now();
 
-    // Reset if too slow between keystrokes
+   
     if (now - lastTime > TIMEOUT) pointer = 0;
     lastTime = now;
 
-    // Normalise 'b' and 'a' (case insensitive)
+ 
     const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
 
     if (key === SEQUENCE[pointer]) {
@@ -202,7 +198,7 @@
         show();
       }
     } else {
-      // If current key matches the first in sequence, start fresh from 1
+      
       pointer = key === SEQUENCE[0] ? 1 : 0;
     }
   });
@@ -210,12 +206,12 @@
   overlay.addEventListener('click', hide);
   dismiss.addEventListener('click', hide);
 
-  // ESC to close
+  
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !modal.hidden) hide();
   });
 
-  // Trap focus inside modal
+
   modal.addEventListener('keydown', (e) => {
     if (e.key === 'Tab') {
       e.preventDefault();
@@ -225,7 +221,7 @@
 })();
 
 
-/* ── Subtle parallax nudge on hero bg glow ── */
+
 (function initHeroParallax() {
   const glow = document.querySelector('.hero__bg-glow');
   if (!glow || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
